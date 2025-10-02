@@ -22,13 +22,12 @@ export const dayModules = {
 const daysData: Day[] = [
   {
     id: 1,
-    title: "Day 1 - 登入介面",
-    description: "一個簡潔的登入表單設計，以動態背景增添互動性。",
-    tech: "p5.js",
-    thumb: "https://placehold.co/400x225/A5B4FC/ffffff?text=Day+1",
+    title: "Day 1 - Cursor",
+    tech: "Vanilla.js",
+    thumb: "",
     component: Day01,
-    content:
-      "設計重點在於背景的粒子動畫，使用 p5.js 實現，提升了整體視覺流動感。",
+    content: "",
+    description: ""
   },
   {
     id: 2,

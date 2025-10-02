@@ -36,7 +36,7 @@ const Day01 = () => {
     for (let i = 0; i < number; i++) {
       const isHollow = Math.random() < 0.4;
       const r = 8 + Math.random() * 8;
-      const k = 0.01 + Math.random() * 0.2;
+      const k = 0.02 + Math.random() * 0.2;
       followers.push({
         x: mouseX,
         y: mouseY,
@@ -73,8 +73,8 @@ const Day01 = () => {
           f.y = f.y + (mouseY - f.y) * 0.01;
         }
         else {
-          f.x = f.x * (1 - f.k) + (mouseX + (Math.random() - 0.5) * 20) * f.k;
-          f.y = f.y * (1 - f.k) + (mouseY + (Math.random() - 0.5) * 20) * f.k;
+          f.x = f.x * (1 - f.k) + (mouseX + (Math.random() - 0.5) * 40) * f.k;
+          f.y = f.y * (1 - f.k) + (mouseY + (Math.random() - 0.5) * 40) * f.k;
         }
       }
 
