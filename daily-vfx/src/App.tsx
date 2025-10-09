@@ -4,6 +4,9 @@ import "./index.css";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 
 import Day01 from "./pages/Day01";
+import Day02 from "./pages/Day02";
+import Day03 from "./pages/Day03";
+
 import type { Day } from "./types/day";
 import Header from "./components/Header";
 import DayContainer from "./components/DayContainer";
@@ -32,22 +35,22 @@ const daysData: Day[] = [
   {
     id: 2,
     title: "Day 2 - 3D 產品展示",
-    description: "使用 Three.js 製作的虛擬產品互動展示，可拖曳視角。",
-    tech: "Three.js",
+    description: "使用 Tone.js 製作的音樂碰撞實驗",
+    tech: "Tone.js",
     thumb: "https://placehold.co/400x225/60A5FA/ffffff?text=Day+2",
-    component: Day01,
+    component: Day02,
     content:
-      "專注於性能優化和材質渲染，讓用戶在不同設備上都能流暢地旋轉和縮放 3D 模型。",
+      "",
   },
   {
     id: 3,
-    title: "Day 3 - 微互動動畫",
-    description: "用於點擊確認按鈕的流暢微動畫，提供即時視覺回饋。",
-    tech: "Anime.js",
+    title: "Day 3",
+    description: "Tone.js dashboard",
+    tech: "Tone.js",
     thumb: "https://placehold.co/400x225/3B82F6/ffffff?text=Day+3",
-    component: null,
+    component: Day03,
     content:
-      "使用 Anime.js 製作的彈跳和變形效果，在確認操作後給予用戶愉快的反饋，提升 UX。",
+      "",
   },
   {
     id: 4,
