@@ -1,5 +1,5 @@
 import { ChevronLeft, Globe, Share2 } from "lucide-react";
-import type { Day } from "../types/day";
+import type { Day } from "../Data/day";
 
 type DayContainerProps = {
   day: Day;

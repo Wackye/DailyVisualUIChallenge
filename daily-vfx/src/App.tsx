@@ -3,15 +3,13 @@ import { lazy } from "react";
 import "./index.css";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 
-import Day01 from "./pages/Day01";
-import Day02 from "./pages/Day02";
-import Day03 from "./pages/Day03";
 
-import type { Day } from "./types/day";
+import { daysData } from "./Data/Daysdata";
+import type { Day } from "./Data/day";
 import Header from "./components/Header";
 import DayContainer from "./components/DayContainer";
 import GalleryGrid from "./components/GalleryGrid";
-//
+
 
 
 
@@ -19,63 +17,6 @@ export const dayModules = {
   1: lazy(() => import("./pages/Day01")), // ← 這裡指向 Daily01.tsx
   // 2: lazy(() => import("../days/Daily02")),
 };
-
-
-// ---------- 資料 ----------
-const daysData: Day[] = [
-  {
-    id: 1,
-    title: "Day 1 - Cursor",
-    tech: "Vanilla.js",
-    thumb: "",
-    component: Day01,
-    content: "",
-    description: ""
-  },
-  {
-    id: 2,
-    title: "Day 2 - 3D 產品展示",
-    description: "使用 Tone.js 製作的音樂碰撞實驗",
-    tech: "Tone.js",
-    thumb: "https://placehold.co/400x225/60A5FA/ffffff?text=Day+2",
-    component: Day02,
-    content:
-      "",
-  },
-  {
-    id: 3,
-    title: "Day 3",
-    description: "Tone.js dashboard",
-    tech: "Tone.js",
-    thumb: "https://placehold.co/400x225/3B82F6/ffffff?text=Day+3",
-    component: Day03,
-    content:
-      "",
-  },
-  {
-    id: 4,
-    title: "Day 4 - 天氣儀表板",
-    description:
-      "響應式且資訊豐富的天氣預報儀表板，支援多城市查詢。",
-    tech: "React, Tailwind",
-    thumb: "https://placehold.co/400x225/1D4ED8/ffffff?text=Day+4",
-    component: null,
-    content:
-      "設計考量了移動優先的佈局，並透過 Tailwind 實現快速響應式調整。",
-  },
-  {
-    id: 5,
-    title: "Day 5 - 音樂播放器 UI",
-    description:
-      "一個現代感的音樂播放器介面設計，具備歌詞同步功能。",
-    tech: "CSS Grid",
-    thumb: "https://placehold.co/400x225/3730A3/ffffff?text=Day+5",
-    component: null,
-    content:
-      "設計風格追求極簡，透過 CSS Grid 確保專輯封面和控制按鈕的佈局清晰。",
-  },
-  // ...可繼續擴充
-];
 
 
 // ---------- 主應用（Hash Router 版本） ----------

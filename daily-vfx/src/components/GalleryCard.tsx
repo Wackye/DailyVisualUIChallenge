@@ -1,6 +1,6 @@
 // src/components/GalleryCard.tsx
 import { useNavigate } from "react-router-dom";
-import type { Day } from "../types/day";
+import type { Day } from "../Data/day";
 
 type Props = {
   day: Day;

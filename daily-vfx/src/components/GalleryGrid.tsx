@@ -1,5 +1,5 @@
 import { Grid } from "lucide-react";
-import type { Day } from "../types/day";
+import type { Day } from "../Data/day";
 import GalleryCard from "./GalleryCard"; // 確保路徑正確
 
 type GalleryGridProps = {
@@ -19,7 +19,7 @@ function GalleryGrid({ days }: GalleryGridProps) {
 
   return (
     <section className="mx-auto p-8 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {days.map((day) => (
+      {[...days].reverse().map((day) => (
         <GalleryCard key={day.id} day={day} />
       ))}
     </section>

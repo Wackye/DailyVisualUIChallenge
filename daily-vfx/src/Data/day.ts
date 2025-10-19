@@ -8,5 +8,4 @@ export type Day = {
   tech: string;
   thumb: string;
   component: React.ComponentType | null;
-  content: string;
 };
