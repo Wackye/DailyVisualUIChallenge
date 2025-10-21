@@ -6,6 +6,7 @@ import Day03 from "../pages/Day03";
 import Day04 from "../pages/Day04";
 import Day05 from "../pages/Day05";
 import Day06 from "../pages/Day06";
+import Day07 from "../pages/Day07";
 export const daysData: Day[] = [
   {
     id: 1,
@@ -49,11 +50,18 @@ export const daysData: Day[] = [
   },
   {
     id: 6,
-    title: "Day 6 - Money is coming my way",
-    description: "A simple yet powerful face tracking experiment.",
-    tech: "Tone.js, Meidapipe",
-    thumb: "",
+    title: "Day 6 - Earn your own bitcoin",
+    description: "Catch the coins with your mouth.",
+    tech: "Meidapipe",
+    thumb: "/preview/Day06.png",
     component: Day06,
   },
-
+  {
+    id: 7,
+    title: "Day 7 - Glyphs",
+    description: "use gesture to draw primitives.",
+    tech: "Meidapipe",
+    thumb: "/preview/Day07.png",
+    component: Day07,
+  },
 ];
