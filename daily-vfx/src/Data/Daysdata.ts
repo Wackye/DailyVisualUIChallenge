@@ -77,10 +77,10 @@ export const daysData: Day[] = [
   },
   {
     id: 9,
-    title: "Day 9 -",
-    description: "The impression of Taipei — in motion, in layers, in collage.",
-    tech: "Midjourney, ChatGPT, Nano banana.",
-    thumb: "",
+    title: "Day 9 - DustFall",
+    description: "A still scene collapses into particles",
+    tech: "PixiJS",
+    thumb: "Day08",
     component: Day09,
   },
 ];
