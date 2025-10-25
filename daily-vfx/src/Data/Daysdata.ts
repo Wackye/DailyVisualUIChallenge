@@ -9,7 +9,7 @@ import Day06 from "../pages/Day06";
 import Day07 from "../pages/Day07";
 import Day08 from "../pages/Day08";
 import Day09 from "../pages/Day09";
-
+import Day10 from "../pages/Day10";
 export const daysData: Day[] = [
   {
     id: 1,
@@ -80,7 +80,15 @@ export const daysData: Day[] = [
     title: "Day 9 - DustFall",
     description: "A still scene collapses into particles",
     tech: "PixiJS",
-    thumb: "Day08",
+    thumb: "./preview/Day09.png",
     component: Day09,
+  },
+  {
+    id: 10,
+    title: "Day 10 - Maginifier",
+    description: "GLSL shader practice.",
+    tech: "REGL",
+    thumb: "./preview/Day10.png",
+    component: Day10,
   },
 ];
