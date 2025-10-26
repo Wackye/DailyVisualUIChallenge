@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { HandLandmarker, FilesetResolver } from "@mediapipe/tasks-vision";
 import * as Tone from "tone";
 
@@ -32,16 +32,6 @@ function midiToNoteName(midiNumber: number): string {
 }
 
 
-/**
- * Quantized Pitch: Converts distance to the nearest semitone frequency.
- */
-function distanceToFreq12TET(d: number, noteMin = NOTE_MIN, noteMax = NOTE_MAX, k = CURVE_K): number {
-  const clamped = Math.min(Math.max(d, 0), 1);
-  const x = Math.pow(1 - clamped, k);
-  const nStar = noteMin + x * (noteMax - noteMin);
-  const n = Math.round(nStar); // Quantize to the nearest semitone
-  return midiToFreq(n);
-}
 
 /**
  * Continuous Pitch: Converts distance to a continuous frequency via exponential mapping.
@@ -283,10 +273,7 @@ const Day05 = () => {
       }
       
       gainRef.current = new Tone.Gain(0).toDestination();
-      oscillatorRef.current = new Tone.Oscillator({
-        type: waveform,
-        frequency: 440,
-      }).connect(gainRef.current).start();
+      oscillatorRef.current = new Tone.Oscillator(440, waveform).connect(gainRef.current).start();
 
       const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } });
       if (videoRef.current) {

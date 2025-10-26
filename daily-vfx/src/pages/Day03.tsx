@@ -230,7 +230,7 @@ const Day03 = () => {
           <div className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-3xl p-8 mb-8 shadow-xl border-4 border-orange-300" style={{ boxShadow: '8px 8px 0px rgba(251, 146, 60, 0.3)' }}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-orange-800">🎹 Pitch Control</h2>
-              <span className="text-3xl font-bold text-white bg-gradient-to-r from-teal-400 to-sky-500 px-6 py-3 rounded-2xl shadow-lg border-3 border-teal-300" style={{ boxBoxShadow: '4px 4px 0px rgba(45, 212, 191, 0.4)' }}>
+              <span className="text-3xl font-bold text-white bg-gradient-to-r from-teal-400 to-sky-500 px-6 py-3 rounded-2xl shadow-lg border-3 border-teal-300" style={{ boxShadow: '4px 4px 0px rgba(45, 212, 191, 0.4)' }}>
                 {getCurrentNote()}
               </span>
             </div>

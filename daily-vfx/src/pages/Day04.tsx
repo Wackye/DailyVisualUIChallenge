@@ -1,5 +1,5 @@
 // src/days/Day04.tsx
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import {
   GestureRecognizer,
   FilesetResolver,
@@ -25,7 +25,7 @@ const Day04 = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | undefined>(undefined);
   const fireworks = useRef<EmojiParticle[]>([]);
   const gestureRecognizer = useRef<GestureRecognizer | null>(null);
   
@@ -141,7 +141,7 @@ const Day04 = () => {
 
       if (video.currentTime !== lastVideoTime && gestureRecognizer.current) {
         lastVideoTime = video.currentTime;
-        const results = gestureRecognizer.current.recognizeForVideo(video, Date.now());
+        const results = gestureRecognizer.current.recognizeForVideo(video, performance.now());
 
         if (predictWebcamFrameCounter < 5) {
             console.log("🧠 辨識結果:", results);

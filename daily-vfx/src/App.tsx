@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { lazy } from "react";
 import "./index.css";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
@@ -24,7 +24,7 @@ const App = () => {
 
   const navigate = useNavigate();
   // 0 = gallery；非 0 則為 Day ID
-  const [currentPageId, setCurrentPageId] = useState<number>(0);
+  const [, setCurrentPageId] = useState<number>(0);
 
   // 從 #day/1 解析出 id
   const parseHash = (): number => {
@@ -44,17 +44,6 @@ const App = () => {
     return () => window.removeEventListener("hashchange", updatePageFromHash);
   }, []);
 
-  const handleNavigate = (id: number) => {
-    if (id === 0) {
-      window.location.hash = "";
-    } else {
-      window.location.hash = `#day/${id}`;
-    }
-    setCurrentPageId(id);
-    window.scrollTo(0, 0);
-  };
-
-  const currentDay = daysData.find((d) => d.id === currentPageId);
 
 
   // -------- Route 元件：Day 頁 --------

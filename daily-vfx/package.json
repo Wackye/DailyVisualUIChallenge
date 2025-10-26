@@ -12,12 +12,14 @@
   "dependencies": {
     "@mediapipe/tasks-vision": "^0.10.22-rc.20250304",
     "@tailwindcss/vite": "^4.1.13",
+    "@types/three": "^0.180.0",
     "lucide-react": "^0.544.0",
     "p5": "^2.0.5",
     "pixi.js": "^8.14.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1",
+    "three": "^0.180.0",
     "tone": "^15.1.22"
   },
   "devDependencies": {

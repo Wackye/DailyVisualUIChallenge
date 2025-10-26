@@ -7,7 +7,7 @@ type HeaderProps = {
   showShare?: boolean;   // 可選，DayContainer 才用
 };
 
-function Header({ onNavigate, total, showShare }: HeaderProps) {
+function Header({ onNavigate }: HeaderProps) {
 
   const location = useLocation();
   const navigate = useNavigate();

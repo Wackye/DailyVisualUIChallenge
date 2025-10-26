@@ -1,5 +1,5 @@
 // src/days/Daily01.tsx
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 // Change name here
 const DailyTemplate = () => {
@@ -9,7 +9,6 @@ const DailyTemplate = () => {
     // 1️⃣ 建立 <canvas> 元素並掛到 hostRef
     const host = hostRef.current!;
     const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d")!;
     host.appendChild(canvas);
 
     // Start your creation
@@ -26,7 +25,7 @@ const DailyTemplate = () => {
 
   return (
     <div className="w-full max-w-7xl mx-auto">
-      <div ref={hostRef} className="w-full h-[450px] bg-gray-100" />
+      <div ref={hostRef} className="w-full aspect-[16/9] bg-gray-100" />
     </div>
   );
 };

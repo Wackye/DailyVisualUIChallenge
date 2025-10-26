@@ -1,5 +1,5 @@
 // src/day09.tsx
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // DEBUG 前綴，方便過濾
 const LOG_PREFIX = "[Day09 Debug]";

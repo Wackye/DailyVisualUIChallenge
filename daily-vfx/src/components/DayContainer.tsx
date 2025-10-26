@@ -1,4 +1,3 @@
-import { ChevronLeft, Globe, Share2 } from "lucide-react";
 import type { Day } from "../Data/day";
 
 type DayContainerProps = {
@@ -6,15 +5,7 @@ type DayContainerProps = {
   onBack?: () => void; // 可選：如果沒有傳，就隱藏返回按鈕
 };
 
-function DayContainer({ day, onBack }: DayContainerProps) {
-  const handleCopyLink = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      alert("作品連結已複製到剪貼簿！");
-    } catch {
-      alert("無法複製，請手動複製網址列。");
-    }
-  };
+function DayContainer({ day }: DayContainerProps) {
 
   const DynamicComponent = day.component; // 這裡拿到元件
 

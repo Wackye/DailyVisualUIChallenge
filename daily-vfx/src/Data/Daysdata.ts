@@ -10,6 +10,9 @@ import Day07 from "../pages/Day07";
 import Day08 from "../pages/Day08";
 import Day09 from "../pages/Day09";
 import Day10 from "../pages/Day10";
+import Day11 from "../pages/Day11";
+import Day12 from "../pages/Day12";
+import Day13 from "../pages/Day13";
 export const daysData: Day[] = [
   {
     id: 1,
@@ -90,5 +93,29 @@ export const daysData: Day[] = [
     tech: "REGL",
     thumb: "./preview/Day10.png",
     component: Day10,
+  },
+  {
+    id: 11,
+    title: "Day 11 - Cursor interaction",
+    description: "GSAP cursor practice",
+    tech: "GSAP",
+    thumb: "./preview/Day11.png",
+    component: Day11,
+  },
+  {
+    id: 12,
+    title: "Day 12 - Cursor interaction",
+    description: "GSAP cursor practice",
+    tech: "GSAP",
+    thumb: "./preview/Day12.png",
+    component: Day12,
+  },
+  {
+    id: 13,
+    title: "Day 13 - Cursor interaction",
+    description: "GSAP cursor practice",
+    tech: "GSAP",
+    thumb: "./preview/Day13.png",
+    component: Day13,
   },
 ];

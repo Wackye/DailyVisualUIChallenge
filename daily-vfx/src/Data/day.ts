@@ -1,5 +1,4 @@
 // src/types/day.ts
-import type { ComponentType } from "react";
 
 export type Day = {
   id: number;

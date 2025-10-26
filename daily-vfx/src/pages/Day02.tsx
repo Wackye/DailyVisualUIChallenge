@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 // --- 修正錯誤: TypeScript 宣告 (Declaration) ---
 // 宣告 p5 和 Tone 存在於全域 window 物件上

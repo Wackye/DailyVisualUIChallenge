@@ -1,19 +1,19 @@
-import React, { useRef, useEffect, useState, forwardRef, useImperativeHandle } from "react";
+import { useRef, useEffect, useState, forwardRef, useImperativeHandle } from "react";
 // MediaPipe
 import {
   FaceLandmarker,
   FilesetResolver,
   DrawingUtils
-} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
+} from "@mediapipe/tasks-vision";
 // Three.js
-import * as THREE from "https://esm.sh/three@0.169.0/build/three.module.js";
-import { GLTFLoader } from "https://esm.sh/three@0.169.0/examples/jsm/loaders/GLTFLoader.js";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 // ====================================================================
 // SECTION 1: TYPE DEFINITIONS
 // ====================================================================
 
-interface NormalizedLandmark { x: number; y: number; z: number; visibility?: number; }
+interface NormalizedLandmark { x: number; y: number; z: number; visibility: number; }
 interface BlendshapeCategory {
   index: number;
   score: number;
@@ -187,7 +187,6 @@ const Day06 = () => {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;          // 可微調 1.0 ~ 1.6
-    renderer.physicallyCorrectLights = true;
 
     // （可選）若要陰影，開啟下列兩行
     // renderer.shadowMap.enabled = true;
@@ -246,7 +245,7 @@ const Day06 = () => {
         scene.add(modelsGroupRef.current);
       },
       undefined,
-      (error) => console.error("GLTF 載入失敗:", error)
+      (error: any) => console.error("GLTF 載入失敗:", error)
     );
 
     const handleResize = () => {

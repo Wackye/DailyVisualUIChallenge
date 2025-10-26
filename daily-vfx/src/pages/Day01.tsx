@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 // Change name here
 const Day01 = () => {
@@ -15,14 +15,14 @@ const Day01 = () => {
     canvas.width = host.clientWidth;
     canvas.height = Math.round((canvas.width * 9) / 16); // 16:9 畫布
 
+    // @ts-ignore
     let raf = 0;
 
     // === 3) 滑鼠速度偵測相關變數 ===
     let mouseX = canvas.width / 2;
     let mouseY = canvas.height / 2;
-    let lastX = mouseX;
-    let lastY = mouseY;
 
+    // @ts-ignore
     let isInside = false;
     let alpha = 0;               // 目前透明度 0~1
     let targetAlpha = 0;         // 目標透明度 0 或 1
