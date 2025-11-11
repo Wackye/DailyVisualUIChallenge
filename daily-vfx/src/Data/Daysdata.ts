@@ -13,6 +13,7 @@ import Day10 from "../pages/Day10";
 import Day11 from "../pages/Day11";
 import Day12 from "../pages/Day12";
 import Day13 from "../pages/Day13";
+import Day14 from "../pages/Day14";
 export const daysData: Day[] = [
   {
     id: 1,
@@ -117,5 +118,13 @@ export const daysData: Day[] = [
     tech: "GSAP",
     thumb: "./preview/Day13.png",
     component: Day13,
+  },
+    {
+    id: 14,
+    title: "Day 14 - 2.5D gesture",
+    description: "",
+    tech: "Mediapipe",
+    thumb: "./preview/Day14.png",
+    component: Day14,
   },
 ];
