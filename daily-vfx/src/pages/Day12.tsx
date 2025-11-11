@@ -52,10 +52,10 @@ function mkLogger(scope: string) {
     timeEnd: (label: string) => console.timeEnd(`${tag} ${label}`),
   };
 }
-const logBoot = mkLogger("BOOT");
-const logRun  = mkLogger("RUN");
-const logFB   = mkLogger("FALLBACK");
-const logDemo = mkLogger("DEMO");
+const logBoot: Logger = mkLogger("BOOT");
+const logRun: Logger  = mkLogger("RUN");
+const logFB: Logger   = mkLogger("FALLBACK");
+const logDemo: Logger = mkLogger("DEMO");
 
 const toDeg = (rad: number) => (rad * 180) / Math.PI;
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
@@ -243,10 +243,13 @@ const Day12 = (props: {
       let animRAF = 0;
       let idleTimer: number | null = null;
 
-      const getSnapTarget = () => {
+      const getSnapTarget = (): { x: number; y: number } | null => {
         if (!props.enableSnap || !props.snapSelectors?.length) return null;
         const sels = props.snapSelectors!;
-        let best: { x: number; y: number; d2: number } | null = null;
+        let bestX = 0;
+        let bestY = 0;
+        let hasBest = false;
+        let bestDistanceSq = Number.POSITIVE_INFINITY;
         const cx = tx, cy = ty;
         for (const sel of sels) {
           document.querySelectorAll<HTMLElement>(sel).forEach((n) => {
@@ -254,11 +257,19 @@ const Day12 = (props: {
             const x = r.left + r.width / 2;
             const y = r.top + r.height / 2;
             const d2 = (x - cx) ** 2 + (y - cy) ** 2;
-            if (best === null || d2 < best.d2) best = { x, y, d2 };
+            if (d2 < bestDistanceSq) {
+              bestDistanceSq = d2;
+              bestX = x;
+              bestY = y;
+              hasBest = true;
+            }
           });
         }
-        if (!best) return null;
-        return best.d2 <= CFG.snapRadius * CFG.snapRadius ? { x: best.x, y: best.y } : null;
+        if (!hasBest) return null;
+        if (bestDistanceSq <= CFG.snapRadius * CFG.snapRadius) {
+          return { x: bestX, y: bestY };
+        }
+        return null;
       };
 
       const scheduleIdle = () => {

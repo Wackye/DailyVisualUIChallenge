@@ -421,7 +421,7 @@ const Day11: React.FC = () => {
 
       // 綁定所有 text-block
       const blocks = host.querySelectorAll<HTMLElement>(".text-block");
-      blocks.forEach((b, i) => {
+      blocks.forEach((b) => {
         const enter = onBlockEnter(b);
         const leave = onBlockLeave(b);
         b.addEventListener("pointerenter", enter);
